@@ -1,6 +1,6 @@
 {
   "name": "pokemon-gofest2022",
-  "private": false,
+  "private": true,
   "version": "0.0.0",
   "type": "module",
   "homepage": "https://felipekruger.github.io/gofest2022.github.io",
@@ -9,7 +9,7 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "git": "^0.1.5",
