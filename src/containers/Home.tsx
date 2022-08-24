@@ -47,7 +47,10 @@ export const Home: React.FC<IHome> = ({pokemonSave}) => {
         sortList();
     }, [JSON.stringify(pokemonState)])
 
-    return (
+    return (<>
+        <div className='d-flex justify-content-center my-3'>
+            <img src="appicon.png " />
+        </div>
         <Tabs
             defaultActiveKey="profile"
             id="uncontrolled-tab-example"
@@ -65,6 +68,6 @@ export const Home: React.FC<IHome> = ({pokemonSave}) => {
             <Tab eventKey="home4" title="16">
             <PokemonList pokemonSet={incursion16} toggleCatch={toggleCatch} />
             </Tab>
-        </Tabs>
+        </Tabs></>
     );
 }
