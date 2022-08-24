@@ -1,6 +1,6 @@
 {
   "name": "pokemon-gofest2022",
-  "private": true,
+  "private": false,
   "version": "0.0.0",
   "type": "module",
   "homepage": "https://felipekruger.github.io/gofest2022.github.io",
@@ -14,7 +14,8 @@
   "dependencies": {
     "git": "^0.1.5",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.3.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.17",
