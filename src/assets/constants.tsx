@@ -1,7 +1,7 @@
-import { pokemonItem } from "../models/interfaces";
+import { PokemonItem } from "../models/interfaces";
 
 
-export const pheromosa_incursion: pokemonItem[] = [
+export const pheromosa_incursion: PokemonItem[] = [
     {
         name: "pikachu",
         caught: false,

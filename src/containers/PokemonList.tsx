@@ -1,4 +1,4 @@
-import { pokemonItem, IPokemonList } from "../models/interfaces";
+import { PokemonItem, IPokemonList } from "../models/interfaces";
 import { Container, Row, Col } from 'react-bootstrap';
 import "../assets/styles.css"
 
@@ -8,7 +8,7 @@ export const PokemonList: React.FC<IPokemonList> = ({pokemon}) => {
     <Container fluid>
         <Row>
             {
-                pokemon.map((poke:pokemonItem) => {
+                pokemon.map((poke:PokemonItem) => {
                     const imgSrc= "src/assets/images/"+poke.name+".png"
                     return (
                         <Col xs={4}>

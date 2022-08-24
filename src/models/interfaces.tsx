@@ -1,8 +1,8 @@
-export interface pokemonItem {
+export interface PokemonItem {
     name: string;
     caught: boolean;
 }
 
 export interface IPokemonList {
-    pokemon: pokemonItem[];
+    pokemon: PokemonItem[];
 }
