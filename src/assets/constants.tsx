@@ -183,9 +183,26 @@ export const allPokemon: Pokemon[] = [
         caught: false,
         number: 684,
     },
+
+//regionals
+{
+    name: "pansage",
+    caught: false,
+    number: 511,
+},
+{
+    name: "pansear",
+    caught: false,
+    number: 513,
+},
+{
+    name: "panpour",
+    caught: false,
+    number: 515,
+},
 ]
 
-export const pheromosa_incursion: number[] =  [24, 123, 185, 237, 307, 347, 401, 527, 588];
-export const buzzwole_incursion: number[] =  [24, 66, 74, 106, 107, 126, 322, 408, 610];
-export const xurkitree_incursion: number[] = [24, 309, 125, 403, 345, 412, 415, 590, 616];
+export const pheromosa_incursion: number[] =  [24, 123, 185, 237, 307, 347, 401, 527, 588, 511];
+export const buzzwole_incursion: number[] =  [24, 66, 74, 106, 107, 126, 322, 408, 610, 513];
+export const xurkitree_incursion: number[] = [24, 309, 125, 403, 345, 412, 415, 590, 616, 515];
 export const nihilego_incursion: number[] = [24, 1, 35, 72, 113, 114, 138, 152, 387, 517, 684];
