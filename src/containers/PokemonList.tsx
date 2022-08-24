@@ -1,6 +1,7 @@
 import { Pokemon, IPokemonList } from "../models/interfaces";
 import { Container, Row, Col } from 'react-bootstrap';
 import "../assets/styles.css"
+import caughtImg from "../assets/images/pokeball.png";
 
 export const PokemonList: React.FC<IPokemonList> = ({pokemonSet, toggleCatch}) => {
 
@@ -22,7 +23,7 @@ export const PokemonList: React.FC<IPokemonList> = ({pokemonSet, toggleCatch}) =
                             </div>
                             {
                                 poke.caught ?
-                                     (<img src="src/assets/images/pokeball.png" className="pokeball-caught" />) : <></>
+                                     (<img src={caughtImg} className="pokeball-caught" />) : <></>
                             }
                             
                         </Col>
