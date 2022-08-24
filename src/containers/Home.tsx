@@ -3,12 +3,12 @@ import { useCallback } from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import {Tab, Tabs} from 'react-bootstrap';
-import { allPokemon, buzzwole_incursion, nihilego_incursion, pheromosa_incursion, xurkitree_incursion } from '../assets/constants';
-import { Pokemon } from '../models/interfaces';
+import { buzzwole_incursion, nihilego_incursion, pheromosa_incursion, xurkitree_incursion } from '../assets/constants';
+import { IHome, Pokemon } from '../models/interfaces';
 import { PokemonList } from './PokemonList';
 
-export const Home: React.FC = () => {
-    const [pokemonState, setAllPokemon] = useState<Pokemon[]>(allPokemon);
+export const Home: React.FC<IHome> = ({pokemonSave}) => {
+    const [pokemonState, setAllPokemon] = useState<Pokemon[]>(pokemonSave);
 
     const incursion10 = pokemonState.filter((pokemon) => pheromosa_incursion.includes(pokemon.number));
     const incursion12 = pokemonState.filter((pokemon) => buzzwole_incursion.includes(pokemon.number));
@@ -40,6 +40,7 @@ export const Home: React.FC = () => {
             return 0;
         });
         setAllPokemon(newState);
+        localStorage.setItem("pokemon", JSON.stringify(newState));
     },[]);
 
     useEffect(()=>{

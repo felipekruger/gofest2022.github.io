@@ -8,3 +8,7 @@ export interface IPokemonList {
     pokemonSet: Pokemon[];
     toggleCatch: (pokemonNumber: number) => void;
 }
+
+export interface IHome {
+    pokemonSave: Pokemon[];
+}
