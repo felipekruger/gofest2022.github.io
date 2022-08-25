@@ -13,7 +13,7 @@ function App() {
   const pokemonSave:Pokemon[] = JSON.parse(localStorage.getItem("pokemon") || '');
 
   return (
-    <div className="App">
+    <div className="App no-scroll">
       <Home pokemonSave={pokemonSave} />
     </div>
   )
