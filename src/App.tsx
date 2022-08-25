@@ -5,7 +5,6 @@ import { Pokemon } from './models/interfaces';
 
 
 function App() {
-  localStorage.clear();
   if(localStorage.getItem("pokemon")===null){
     localStorage.setItem("pokemon", JSON.stringify(allPokemon));
   };
