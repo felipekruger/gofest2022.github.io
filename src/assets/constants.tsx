@@ -39,6 +39,10 @@ import turtwig from "./images/turtwig.png";
 import munna from "./images/munna.png";
 import swirlix from "./images/swirlix.png";
 
+import pansage from "./images/pansage.png";
+import pansear from "./images/pansear.png";
+import panpour from "./images/panpour.png";
+
 export const allPokemon: Pokemon[] = [
     {
         name: "pikachu",
@@ -263,19 +267,19 @@ export const allPokemon: Pokemon[] = [
         name: "pansage",
         caught: false,
         number: 511,
-        img: sudowoodo,
+        img: pansage,
     },
     {
         name: "pansear",
         caught: false,
         number: 513,
-        img: sudowoodo,
+        img: pansear,
     },
     {
         name: "panpour",
         caught: false,
         number: 515,
-        img: sudowoodo,
+        img: panpour,
     },
 ]
 
