@@ -9,7 +9,14 @@ function App() {
     localStorage.setItem("pokemon", JSON.stringify(allPokemon));
   };
 
+  const pokemonCheck:Pokemon[] = JSON.parse(localStorage.getItem("pokemon") || '');
+
+  if(pokemonCheck.length !== allPokemon.length){
+    localStorage.setItem("pokemon", JSON.stringify(allPokemon));
+  }
+
   const pokemonSave:Pokemon[] = JSON.parse(localStorage.getItem("pokemon") || '');
+
   return (
     <div className="App">
       <Home pokemonSave={pokemonSave} />

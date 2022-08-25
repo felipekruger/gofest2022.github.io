@@ -2,6 +2,7 @@ export interface Pokemon {
     name: string;
     caught: boolean;
     number: number;
+    img?: string;
 }
 
 export interface IPokemonList {

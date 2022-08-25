@@ -5,7 +5,6 @@ import caughtImg from "../assets/images/pokeball.png";
 
 export const PokemonList: React.FC<IPokemonList> = ({pokemonSet, toggleCatch}) => {
 
-
     return( 
     <Container fluid>
         <Row>
@@ -17,7 +16,7 @@ export const PokemonList: React.FC<IPokemonList> = ({pokemonSet, toggleCatch}) =
                         <Col xs={4} onClick={ () => toggleCatch(poke.number) }>
                             <div className="custom-card">
                                 <div className="center-img">
-                                    <img src={imgSrc} className="card-img" />
+                                    <img src={poke.img} className="card-img" />
                                 </div>
                                 {poke.name}
                             </div>
