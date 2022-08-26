@@ -4,12 +4,14 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import {Container, Tab, Tabs} from 'react-bootstrap';
 import { buzzwole_incursion, nihilego_incursion, pheromosa_incursion, xurkitree_incursion } from '../assets/constants';
-import { IHome, Pokemon } from '../models/interfaces';
+import { IHome, IUnown, Pokemon } from '../models/interfaces';
 import { PokemonList } from './PokemonList';
 import logo from '../assets/images/appicon.png';
+import { UnownList } from './UnownList';
 
-export const Home: React.FC<IHome> = ({pokemonSave}) => {
+export const Home: React.FC<IHome> = ({pokemonSave, unownSave}) => {
     const [pokemonState, setAllPokemon] = useState<Pokemon[]>(pokemonSave);
+    const [unonwState, setAllUnown] = useState<IUnown[]>(unownSave);
 
     const incursion10 = pokemonState.filter((pokemon) => pheromosa_incursion.includes(pokemon.number));
     const incursion12 = pokemonState.filter((pokemon) => buzzwole_incursion.includes(pokemon.number));
@@ -48,6 +50,40 @@ export const Home: React.FC<IHome> = ({pokemonSave}) => {
         sortList();
     }, [JSON.stringify(pokemonState)])
 
+    //unown
+
+    const toggleCatchUnown = (letter: string) => {
+        const newState = [];
+        for( const i in unonwState) {
+            if(unonwState[i].letter !== letter)
+                newState.push(unonwState[i])
+        }
+        
+        const unown = unonwState.filter((unown) => unown.letter === letter)[0];
+        unown.caught = !unown.caught;
+        newState.push(unown)
+
+        setAllUnown(newState);
+    }
+
+    const sortListUnown = useCallback(()=>{
+        const newState = [];
+        for( const i in unonwState) {
+            newState.push(unonwState[i]);
+        }
+        newState.sort((a,b) => {
+            if(a.letter<b.letter) return -1;
+            if(a.letter>b.letter) return 1;
+            return 0;
+        });
+        setAllUnown(newState);
+        localStorage.setItem("unown", JSON.stringify(newState));
+    },[]);
+
+    useEffect(()=>{
+        sortListUnown();
+    }, [JSON.stringify(unonwState)])
+
     return (<>
         <div className='d-flex justify-content-center my-3'>
             <img src={logo} />
@@ -70,15 +106,7 @@ export const Home: React.FC<IHome> = ({pokemonSave}) => {
                 <PokemonList pokemonSet={incursion16} toggleCatch={toggleCatch} />
             </Tab>
             <Tab eventKey="home5" title="UNOWN">
-                <Container fluid>
-                    <h2>B</h2>
-                    <h2>G</h2>
-                    <h2>N</h2>
-                    <h2>O</h2>
-                    <h2>P</h2>
-                    <h2>S</h2>
-                    <h2>X</h2>
-                </Container>
+                <UnownList unownSet={unonwState} toggleCatchUnown={toggleCatchUnown} />
             </Tab>
         </Tabs></>
     );

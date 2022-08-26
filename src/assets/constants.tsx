@@ -1,4 +1,4 @@
-import { Pokemon } from "../models/interfaces";
+import { IUnown, Pokemon } from "../models/interfaces";
 import pikachu from "./images/pikachu.png";
 import scyther from "./images/scyther.png";
 import sudowoodo from "./images/sudowoodo.png";
@@ -283,6 +283,36 @@ export const allPokemon: Pokemon[] = [
     },
 ]
 
+export const allUnown : IUnown[] = [
+    {
+        letter: "B",
+        caught: false
+    },
+    {
+        letter: "G",
+        caught: false
+    },
+    {
+        letter: "N",
+        caught: false
+    },
+    {
+        letter: "O",
+        caught: false
+    },
+    {
+        letter: "P",
+        caught: false
+    },
+    {
+        letter: "S",
+        caught: false
+    },
+    {
+        letter: "X",
+        caught: false
+    },
+];
 export const pheromosa_incursion: number[] =  [24, 123, 185, 237, 307, 347, 401, 527, 588, 511];
 export const buzzwole_incursion: number[] =  [24, 66, 74, 106, 107, 126, 322, 408, 610, 513];
 export const xurkitree_incursion: number[] = [24, 309, 125, 403, 345, 412, 415, 590, 616, 515];

@@ -12,4 +12,15 @@ export interface IPokemonList {
 
 export interface IHome {
     pokemonSave: Pokemon[];
+    unownSave: IUnown[];
+}
+
+export interface IUnown {
+    letter: string;
+    caught: boolean;
+}
+
+export interface IUnownList{
+    unownSet: IUnown[];
+    toggleCatchUnown: (letter: string) => void;
 }
